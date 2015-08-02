@@ -26,13 +26,16 @@ a<-get.adjacency(graph.edgelist(as.matrix(XDSE_nodes), directed=TRUE))
 XDSE_nodes_matrix1<-as.matrix(a)
 
 #### Graphs and Analysis ####
-am.graph1<-new("graphAM", adjMat=XDSE_nodes_matrix, edgemode="directed")
+am.graph1<-new("graphAM", adjMat=XDSE_nodes_matrix1, edgemode="directed")
 am.graph1
 plot(am.graph1, attrs = list(node = list(fillcolor = "lightblue", fontsize = 46),edge = list(arrowsize=0.5)))
 gplot(XDSE_nodes_matrix1, displaylabels=TRUE)
-XDSE_nodes_degree<-degree(XDSE_nodes_matrix1)
-XDSE_nodes_evcent<-evcent(XDSE_nodes_matrix1)
-XDSE_nodes_closeness<-closeness(XDSE_nodes_matrix1)
-XDSE_nodes_geodist<-geodist(XDSE_nodes_matrix1)
+XDSE_nodes_stats<- data.frame(
+    degree=sna::degree(XDSE_nodes_matrix1),
+    evcent=sna::evcent(XDSE_nodes_matrix1),
+    closeness=sna::closeness(XDSE_nodes_matrix1),
+    row.names = row.names(XDSE_nodes_matrix1)
+    )
+XDSE_nodes_stats_list<-list(XDSE_nodes_stats, geodist<-sna::geodist(XDSE_nodes_matrix1))
 
 

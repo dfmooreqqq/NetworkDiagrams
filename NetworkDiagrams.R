@@ -1,6 +1,6 @@
 #### Environment setup ####
 # Load packages.
-packages <- c("gdata", "ggplot2", "plyr", "reshape2", "tm", "dplyr", "igraph", "data.table", "sna")
+packages <- c("ggplot2", "igraph","sna")
 packages <- lapply(packages, FUN = function(x) {
     if (!require(x, character.only = TRUE)) {
         install.packages(x)
@@ -8,9 +8,9 @@ packages <- lapply(packages, FUN = function(x) {
     }
 })
 
-source("http://bioconductor.org/biocLite.R")
-biocLite("Rgraphviz")
-library("Rgraphviz")
+# source("http://bioconductor.org/biocLite.R")
+# biocLite("Rgraphviz")
+# library("Rgraphviz")
 
 #### Set working directory ####
 workingdir<-paste("C:\\Users", Sys.getenv("USERNAME"), "Documents\\GitHub\\NetworkDiagrams", sep = "\\")

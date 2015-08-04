@@ -1,0 +1,34 @@
+Node 1,Node 2
+UHD,UHD Streaming
+UHD,UHD-BD Playback
+UHD Streaming,HDMI Display Out
+UHD-BD Playback,HDMI Display Out
+Display Out,Legacy
+HDMI Display Out,UHD
+HDMI Display Out,HDR
+UHD Streaming,HDCP
+UHD-BD Playback,HDCP
+HDCP,HDCP TX 1.4
+HDCP,HDCP TX 2.2
+HDCP,HDR
+UHD Streaming,CODECs
+UHD-BD Playback,CODECs
+HDMI Certification,Display Out
+HDMI Certification,HDCP
+HDMI Certification,CODECs
+HDMI Certification,HDMI In
+HDMI In,Legacy Display In
+HDMI In,HDCP RX 1.4
+UHD Streaming,Streaming Application
+Streaming Application,Netflix
+Streaming Application,Hulu Plus
+Streaming Application,Xbox Video
+UHD-BD Playback,BD Player Application
+BD Player Application,AACS 2.0
+BD Player Application,Legacy
+BD Player Application,Cert
+BD Player Application,HDR
+CODECs,Pre-HEVC
+CODECs,HEVC
+CODECs,Multi-stream
+CODECs,Source Material

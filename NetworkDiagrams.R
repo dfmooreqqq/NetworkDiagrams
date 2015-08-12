@@ -1,6 +1,6 @@
 #### Environment setup ####
 # Load packages.
-packages <- c("ggplot2", "igraph","sna")
+packages <- c("ggplot2", "igraph","sna", "graph")
 packages <- lapply(packages, FUN = function(x) {
     if (!require(x, character.only = TRUE)) {
         install.packages(x)
@@ -29,13 +29,11 @@ XDSE_nodes_matrix1<-as.matrix(a)
 am.graph1<-new("graphAM", adjMat=XDSE_nodes_matrix1, edgemode="directed")
 am.graph1
 plot(am.graph1, attrs = list(node = list(fillcolor = "lightblue", fontsize = 46),edge = list(arrowsize=0.5)))
-gplot(XDSE_nodes_matrix1, displaylabels=TRUE)
+gplot(XDSE_nodes_matrix1, displaylabels=TRUE, boxed.labels=FALSE, label.pos=5, vertex.cex=2)
 XDSE_nodes_stats<- data.frame(
     degree=sna::degree(XDSE_nodes_matrix1),
     evcent=sna::evcent(XDSE_nodes_matrix1),
     closeness=sna::closeness(XDSE_nodes_matrix1),
     row.names = row.names(XDSE_nodes_matrix1)
     )
-XDSE_nodes_stats_list<-list(XDSE_nodes_stats, geodist<-sna::geodist(XDSE_nodes_matrix1))
-
-
+XDSE_nodes_stats_list<-list(XDSE_nodes_stats, geodist<-sna::geodist(XDSE_nodes_matrix1, predecessors=TRUE))
